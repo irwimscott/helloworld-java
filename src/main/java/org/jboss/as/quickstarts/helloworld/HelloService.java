@@ -28,4 +28,12 @@ public class HelloService {
         return "Hello " + name + "!";
     }
 
+    String createIPMessage(String ip) {
+        return "MY BIND ADDRESS is: " + System.getProperty("jboss.bind.address") ;
+    }
+    
+    String createPORTMessage(String ip) {
+        return "My LISTEN PORT is: " + System.getProperty("jboss.http.port") ;
+    }
+    
 }
