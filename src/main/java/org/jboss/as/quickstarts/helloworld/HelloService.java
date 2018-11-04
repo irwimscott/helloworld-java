@@ -28,8 +28,16 @@ public class HelloService {
         return "Hello " + name + "!";
     }
 
-    String createIPMessage(String ip) {
-        return "MY BIND ADDRESS is: " + System.getProperty("jboss.bind.address") ;
+    //String createIPMessage(String ip) {
+    //    return "MY BIND ADDRESS is: " + System.getProperty("jboss.bind.address") ;
+    //}
+    
+    String createIPMessage(String ip) throws UnknownHostException {
+        InetAddress addr = InetAddress.getLocalHost();
+        //Getting IPAddress of localhost - getHostAddress return IP Address
+        // in textual format
+        String ipAddress = addr.getHostAddress();
+        return ipAddress;
     }
     
     String createPORTMessage(String ip) {
