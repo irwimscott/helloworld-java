@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 package org.jboss.as.quickstarts.helloworld;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * A simple CDI service which is able to say hello to someone
