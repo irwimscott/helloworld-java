@@ -49,7 +49,7 @@ public class HelloService {
         return "My Property two is: " + System.getProperty("valor2") ;
     }
     String createPROPTHREEMessage(String ambiente) {
-        return "My Property two is: " + System.getProperty("ambiente") ;
+        return "My Property three is: " + System.getProperty("ambiente") ;
     }
     
 }
