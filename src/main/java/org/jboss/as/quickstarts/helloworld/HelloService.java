@@ -42,13 +42,13 @@ public class HelloService {
         return ipAddress;
     }
     
-    String createPROPONEMessage(String ip) {
+    String createPROPONEMessage(String valor1) {
         return "My Property one is: " + System.getProperty("valor1") ;
     }
-    String createPROPTWOMessage(String ip) {
+    String createPROPTWOMessage(String valor2) {
         return "My Property two is: " + System.getProperty("valor2") ;
     }
-    String createPROPTHREEMessage(String ip) {
+    String createPROPTHREEMessage(String ambiente) {
         return "My Property two is: " + System.getProperty("ambiente") ;
     }
     
