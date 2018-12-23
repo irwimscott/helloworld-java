@@ -57,7 +57,9 @@ public class HelloWorldServlet extends HttpServlet {
         writer.println(PAGE_HEADER);
         writer.println("<h1>" + helloService.createHelloMessage("World Openshift NEW!") + "</h1>");
         writer.println("<h1>" + helloService.createIPMessage("IP") + "</h1>");
-        writer.println("<h1>" + helloService.createPROPONEMessage("PROPERTY: ") + "</h1>");
+        writer.println("<h1>" + helloService.createPROPONEMessage("PROPERTY-ONE: ") + "</h1>");
+        writer.println("<h1>" + helloService.createPROPTWOMessage("PROPERTY-TWO: ") + "</h1>");
+        writer.println("<h1>" + helloService.createPROPTHREEMessage("PROPERTY-THREE: ") + "</h1>");
         writer.println(PAGE_FOOTER);
         writer.close();
     }
