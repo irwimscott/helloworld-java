@@ -42,7 +42,7 @@ public class HelloService {
         return ipAddress;
     }
     
-    String createPORTMessage(String ip) {
+    String createPROPONEMessage(String ip) {
         return "My Property one is: " + System.getProperty("test1.properties") ;
     }
     
