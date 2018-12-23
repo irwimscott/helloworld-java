@@ -43,7 +43,13 @@ public class HelloService {
     }
     
     String createPROPONEMessage(String ip) {
-        return "My Property one is: " + System.getProperty("test1.properties") ;
+        return "My Property one is: " + System.getProperty("valor1") ;
+    }
+    String createPROPTWOMessage(String ip) {
+        return "My Property two is: " + System.getProperty("valor2") ;
+    }
+    String createPROPTHREEMessage(String ip) {
+        return "My Property two is: " + System.getProperty("ambiente") ;
     }
     
 }
