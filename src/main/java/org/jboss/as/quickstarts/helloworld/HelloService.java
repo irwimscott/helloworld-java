@@ -43,7 +43,7 @@ public class HelloService {
     }
     
     String createPORTMessage(String ip) {
-        return "My LISTEN PORT is: " + System.getProperty("jboss.http.port") ;
+        return "My Property one is: " + System.getProperty("test1.properties") ;
     }
     
 }
