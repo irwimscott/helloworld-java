@@ -39,7 +39,8 @@ public class HelloService {
         //Getting IPAddress of localhost - getHostAddress return IP Address
         // in textual format
         String ipAddress = addr.getHostAddress();
-        return ipAddress;
+        //return ipAddress;
+        return "My container IP-ADDR is: " + System.getProperty("ip") ;
     }
     
     String createPROPONEMessage(String valor1) {
