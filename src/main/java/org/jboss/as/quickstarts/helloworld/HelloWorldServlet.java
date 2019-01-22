@@ -56,10 +56,10 @@ public class HelloWorldServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.println(PAGE_HEADER);
         writer.println("<h1>" + helloService.createHelloMessage("World Openshift NEW!") + "</h1>");
-        writer.println("<h2><font color="red">" + helloService.createIPMessage("IP") + "</font></h2>");
-        writer.println("<h2><font color="blue">" + helloService.createPROPONEMessage("PROPERTY-ONE: ") + "</font></h2>");
-        writer.println("<h2><font color="purple">" + helloService.createPROPTWOMessage("PROPERTY-TWO: ") + "</font></h2>");
-        writer.println("<h2><font color="orange">" + helloService.createPROPTHREEMessage("PROPERTY-THREE: ") + "</font></h2>");
+        writer.println("<h2>" + helloService.createIPMessage("IP") + "</h2>");
+        writer.println("<h2>" + helloService.createPROPONEMessage("PROPERTY-ONE: ") + "</h2>");
+        writer.println("<h2>" + helloService.createPROPTWOMessage("PROPERTY-TWO: ") + "</h2>");
+        writer.println("<h2>" + helloService.createPROPTHREEMessage("PROPERTY-THREE: ") + "</h2>");
         writer.println(PAGE_FOOTER);
         writer.close();
     }
