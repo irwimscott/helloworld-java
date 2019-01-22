@@ -40,7 +40,7 @@ public class HelloService {
         // in textual format
         String ipAddress = addr.getHostAddress();
         //return ipAddress;
-        return "My container IP-ADDR is: " + System.getProperty("ip") ;
+        return "My container IP-ADDR is: " + ipAddress ;
     }
     
     String createPROPONEMessage(String valor1) {
