@@ -2,9 +2,8 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.8
 workflows:
-  #maven_test:
     jobs:
-      - deploy:
+      - deploy
 jobs:
   deploy:
     executor: heroku/default # Uses the basic buildpack-deps image, which has the prerequisites for installing heroku's CLI.
