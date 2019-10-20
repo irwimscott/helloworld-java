@@ -1,9 +1,9 @@
 version: 2.1
 orbs:
-  maven: circleci/maven@0.0.10
+  #maven: circleci/maven@0.0.10
   heroku: circleci/heroku@0.0.8
 workflows:
-  maven_test:
+  #maven_test:
     jobs:
       ##- maven/test
       - deploy:
