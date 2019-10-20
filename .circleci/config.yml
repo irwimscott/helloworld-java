@@ -5,10 +5,10 @@ orbs:
 workflows:
   maven_test:
     jobs:
-      - maven/test
+      ##- maven/test
       - deploy:
-          requires:
-            - maven/test
+      ##    requires:
+      ##      - maven/test
 jobs:
   deploy:
     executor: heroku/default # Uses the basic buildpack-deps image, which has the prerequisites for installing heroku's CLI.
