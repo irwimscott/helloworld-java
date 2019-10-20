@@ -88,41 +88,6 @@
           </webResources>
         </configuration>
       </plugin>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <configuration>
-              <exportAntProperties>true</exportAntProperties>
-              <target>
-                <script language="javascript">
-			 <![CDATA[		
-			 
-    				if (!String.prototype.encodeHTML) {
-    				  String.prototype.encodeHTML = function () {
-    					return this.replace(/&/g, '&amp;')
-    							   .replace(/</g, '&lt;')
-    							   .replace(/>/g, '&gt;')
-    							   .replace(/"/g, '&quot;')
-    							   .replace(/'/g, '&apos;');
-    				  };
-    				}
-    			
-    			 project.setProperty("enc.db.url",project.getProperty("db.url").encodeHTML());
-    			 project.setProperty("enc.db.user",project.getProperty("db.user").encodeHTML());
-    			 project.setProperty("enc.db.password",project.getProperty("db.password").encodeHTML());
-			 
-			 ]]>
-                </script>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 </project>
