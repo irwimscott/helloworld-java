@@ -67,19 +67,62 @@
 
     </dependencies>
 <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals><goal>copy-dependencies</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+ <!-- Set the name of the WAR, used as the context root when the app is 
+      deployed -->
+    <!--<finalName>${project.artifactId}</finalName> -->
+    <finalName>ROOT</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>src/main/webapp</directory>
+              <filtering>true</filtering>
+              <includes>
+                <include>**/*.xml</include>
+              </includes>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <configuration>
+              <exportAntProperties>true</exportAntProperties>
+              <target>
+                <script language="javascript">
+			 <![CDATA[		
+			 
+    				if (!String.prototype.encodeHTML) {
+    				  String.prototype.encodeHTML = function () {
+    					return this.replace(/&/g, '&amp;')
+    							   .replace(/</g, '&lt;')
+    							   .replace(/>/g, '&gt;')
+    							   .replace(/"/g, '&quot;')
+    							   .replace(/'/g, '&apos;');
+    				  };
+    				}
+    			
+    			 project.setProperty("enc.db.url",project.getProperty("db.url").encodeHTML());
+    			 project.setProperty("enc.db.user",project.getProperty("db.user").encodeHTML());
+    			 project.setProperty("enc.db.password",project.getProperty("db.password").encodeHTML());
+			 
+			 ]]>
+                </script>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
