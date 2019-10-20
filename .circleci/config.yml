@@ -6,9 +6,9 @@ workflows:
   maven_test:
     jobs:
       - maven/test
-  heroku_deploy:
-    jobs:
-      - deploy
+      - deploy:
+          requires:
+            - maven/test
 jobs:
   deploy:
     executor: heroku/default # Uses the basic buildpack-deps image, which has the prerequisites for installing heroku's CLI.
